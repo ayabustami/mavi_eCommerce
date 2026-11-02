@@ -22,7 +22,7 @@ export default function Login() {
     try {
       const response = await axios.post('https://knowledgeshop.runasp.net/api/auth/Account/Login', data);
       setSuccess(true);
-      navigate('/Home');
+      navigate('/', { replace: true });
 
     }
     catch (error) {
