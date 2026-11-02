@@ -56,7 +56,7 @@ export default function Login() {
             </Grid>
             <Grid  size={12} sx={{mt:2 ,display:'flex', justifyContent:'space-between' ,alignItems:'center' , alignContent:'center'}}>
               <FormControlLabel  control={<Checkbox {...register("rememberMe")} />} label="Remember me" />          
-              <a href="/" style={{ textDecoration: 'none', color: '#1976d2', fontSize: '14px' }}> Forgot Password?</a> 
+              <Link to="/auth/forget-password" style={{ textDecoration: 'none', color: '#1976d2', fontSize: '14px' }}> Forgot Password?</Link> 
             </Grid>
             <Grid  size={12} sx={{mt:2 ,display:'flex', alignItems:'center' , alignContent:'center', justifyContent:'center'}}>
               <Button  type="submit" variant="contained" color="primary"  endIcon={<ArrowForwardIcon />}   disabled={isSubmitting}> {isSubmitting ? "Loading..." : "Login"} </Button>

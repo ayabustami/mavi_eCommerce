@@ -19,6 +19,10 @@ export const loginSchema = yup.object({
 
 
 })
-
-
+export const forgotPasswordSchema = yup.object({
+    email: yup.string().email("Invalid email address").required("Email is required"),
+})
+export const verifyCodeSchema = yup.object({
+    code: yup.string().required("Code is required").matches(/^\d{4}$/, "Code must be 4 digits"),
+})
 
