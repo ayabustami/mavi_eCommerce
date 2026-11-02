@@ -7,6 +7,8 @@ import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import ForgotPassword from '../pages/forgetPassword/ForgetPassword'
 import VerifyCode from '../pages/verifyCode/VeryfiCode'
+import ResetPassword from '../pages/resetPassword/ResetPassword'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
     {
         path: "verify-code",
         element: <VerifyCode />
+    },
+    {
+        path: "reset-password",
+        element: <ResetPassword />
     }
   ]
   }

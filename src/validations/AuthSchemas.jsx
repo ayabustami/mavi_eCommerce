@@ -26,3 +26,10 @@ export const verifyCodeSchema = yup.object({
     code: yup.string().required("Code is required").matches(/^\d{4}$/, "Code must be 4 digits"),
 })
 
+export const resetPasswordSchema = yup.object({
+    newPassword: yup.string().required("New password is required").min(8, "New password must be at least 8 characters").matches(/[A-Z]/, "Must contain at least one uppercase letter")
+    .matches(/[a-z]/, "Must contain at least one lowercase letter")
+    .matches(/[0-9]/, "Must contain at least one number")
+    .matches(/[^A-Za-z0-9]/, "Must contain at least one special character"),
+    confirmNewPassword: yup.string().oneOf([yup.ref('newPassword'), null], 'Passwords must match').required("Confirm new password is required"),
+})  

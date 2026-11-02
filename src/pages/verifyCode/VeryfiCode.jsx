@@ -42,7 +42,7 @@ export default function VerifyCode() {
     }
 
     const onSubmit = (data) => {
-        navigate('/auth/test', { state: { email, code: data.code } });
+        navigate('/auth/reset-password', { state: { email, code: data.code } });
     }
 
     if (!email) return <Navigate to="/auth/forgot-password" replace />
