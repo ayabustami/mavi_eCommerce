@@ -18,14 +18,14 @@ export default function Header() {
           <Box sx={{ gridArea: 'search' }}>
             <SearchBar />
           </Box>
-          <Box direction="row" alignItems="center" spacing={1} sx={{display: 'flex', gridArea: 'actions', justifySelf: 'end' }}>
+          <Box direction="row" spacing={1} sx={{display: 'flex', gridArea: 'actions', justifySelf: 'end' }}>
             <IconButton aria-label="Wishlist" sx={{ color: 'text.primary' }}>
               <FavoriteBorderIcon />
             </IconButton>
             <IconButton aria-label="Cart" sx={{ color: 'text.primary' }}>
                 <ShoppingBagOutlinedIcon />
             </IconButton>
-            <Box direction="row" alignItems="center" spacing={1.25} sx={{ display:  'flex',alignItems : 'center',justifyContent : 'center',pl: 2, ml: 1, borderLeft: '1px solid', borderColor: 'divider', textDecoration: 'none', color: 'text.primary' ,gap: 0.5}}>
+            <Box direction="row" spacing={1.25} sx={{ display:  'flex',alignItems : 'center',justifyContent : 'center',pl: 2, ml: 1, borderLeft: '1px solid', borderColor: 'divider', textDecoration: 'none', color: 'text.primary' ,gap: 0.5}}>
                 <AccountCircleIcon  sx={{ width: 25, height: 25 ,color: 'text.primary' }} />
                 <Typography variant="body2" >
                   Test User

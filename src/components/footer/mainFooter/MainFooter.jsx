@@ -44,7 +44,7 @@ export default function MainFooter() {
             }}
             >
 
-            <Box spacing={3} alignItems="flex-start" sx={{ maxWidth: 320 }}>
+            <Box spacing={3}  sx={{ alignItems:"flex-start", maxWidth: 320 }}>
                 <Logo color="#fff" />
                 <Typography variant="body2" sx={{ opacity: 0.85, lineHeight: '24px' }}>
                 A tranquil digital marketplace connecting conscious connoisseurs with refined artisan wares,
