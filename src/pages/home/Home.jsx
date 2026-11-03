@@ -5,10 +5,15 @@ import { CircularProgress, Alert } from '@mui/material';
 import useProducts from '../../components/hooks/GetProducts';
 export default function Home() {
 
-const { products, isLoading, error } = useProducts();
+return <>
+<Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+  <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 600, fontSize: '24px' }}>
+    Home
+  </Typography>
+  </Box>
+  </>
+/*const { products, isLoading, error } = useProducts();
 
-
-/*
 console.log(products);
   if(isLoading) return <CircularProgress />;
   if(error) return <Alert severity="error">Error loading products</Alert>;
