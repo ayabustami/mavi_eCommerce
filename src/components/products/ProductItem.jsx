@@ -7,7 +7,7 @@ export default function ProductItem({ product }) {
   const { id, image, name, price, rate } = product
 
   return <>
-  <Link>
+  <Link to={`/products/${id}`}>
       <Card key={id} sx={{ borderRadius: 4, boxShadow: '3px 3px 3px 3px rgba(1, 28, 64, 0.08)' , transition: 'all 0.5s ease',
       '&:hover': {
         transform: 'translateY(-4px)',

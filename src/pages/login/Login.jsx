@@ -10,9 +10,11 @@ import { useNavigate } from 'react-router'
 import Alert from '@mui/material/Alert';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import { UseAuthStore } from '../../store/UseAuthStore'
 
 export default function Login() {
   const navigate = useNavigate();
+  const login= UseAuthStore((state) => state.login);
   const [serverError, setServerError] = useState(null);
   const [success, setSuccess] = useState(false);
   const {register,handleSubmit,  formState: { errors , isSubmitting }
@@ -22,6 +24,8 @@ export default function Login() {
     try {
       const response = await axios.post('https://knowledgeshop.runasp.net/api/auth/Account/Login', data);
       setSuccess(true);
+      login(response.data.accessToken);
+
       navigate('/', { replace: true });
 
     }

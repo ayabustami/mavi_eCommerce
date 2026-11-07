@@ -1,5 +1,5 @@
 
-import axios from 'axios';
+import AxiosInsnatce from '../../api/AxiosInstance';
 import { useQuery } from '@tanstack/react-query';
 
 /*export default function useCategories() {
@@ -43,11 +43,8 @@ import { useQuery } from '@tanstack/react-query';
 export default function useCategories() {
 
     const getCategories = async () => {
-            const response = await axios.get('https://knowledgeshop.runasp.net/api/Categories', {
-                headers: {
-                    "accept-language": "en"
-                }
-            })
+            const response= await AxiosInsnatce.get(`Categories`);
+
             return response.data.response.data;
         }
     const {data , isLoading, error} = useQuery({

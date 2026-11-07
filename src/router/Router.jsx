@@ -8,7 +8,8 @@ import Register from '../pages/register/Register'
 import ForgotPassword from '../pages/forgetPassword/ForgetPassword'
 import VerifyCode from '../pages/verifyCode/VeryfiCode'
 import ResetPassword from '../pages/resetPassword/ResetPassword'
-
+import ProductDetails from '../components/products/ProductDetails'
+import Cart from '../pages/cart/Cart'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
+      },
+      {
+        path:"products/:id",
+        element: <ProductDetails/>
+      },
+      {
+        path:"cart",
+        element:<Cart/>
       }
     ]
   },
