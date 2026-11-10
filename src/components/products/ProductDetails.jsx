@@ -45,7 +45,7 @@ export default function ProductDetails() {
                 return;
             }
             
-                addToCart(product.id,{
+                addToCart(id,{
                     onSuccess :()=>{
                         toast.success("Product Added to Cart!");
                     },

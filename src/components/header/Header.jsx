@@ -36,7 +36,7 @@ export default function Header() {
               <IconButton aria-label="Wishlist" sx={{ color: 'text.primary' }}>
                 <FavoriteBorderIcon />
               </IconButton>
-              <IconButton aria-label="Cart" sx={{ color: 'text.primary' }}>
+              <IconButton component={Link} to="/cart" aria-label="Cart" sx={{ color: 'text.primary' }}>
                   <ShoppingBagOutlinedIcon />
               </IconButton>
               {token ? (
