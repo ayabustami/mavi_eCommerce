@@ -1,4 +1,4 @@
-import logoUrl from '../../assets/logo/whitelogo.svg'
+import logoUrl from '../../assets/logo/whiteLogo.svg'
 import { Link } from 'react-router'
 
 export default function WhiteLogo({ height = 32 }) {
