@@ -61,7 +61,7 @@ export default function ProductDetails() {
     <ToastContainer position="top-center" />
 
         
-        <Box sx={{ maxWidth: 1200, mx: 'auto', p: { xs: 2, md: 4 } }}>
+        <Box sx={{ maxWidth: 1200, mx: 'auto', p: { xs: 2, md: 30 } }}>
             <Grid container spacing={4}>
                 <Grid size={{ xs: 12, md: 6 }}>
                     <Box sx={{ bgcolor: '#f5f5f5', borderRadius: 3, overflow: 'hidden' }} >

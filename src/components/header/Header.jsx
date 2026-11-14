@@ -19,8 +19,8 @@ export default function Header() {
 
   return <>
     <Box component="header">
-      <AppBar   position="fixed"  elevation={0}
-          sx={{ bgcolor: 'rgba(255, 255, 255, 0.85)', color: 'text.primary', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(0, 0, 0, 0.08)'}}>
+      <AppBar   position="fixed" 
+          sx={{ bgcolor: 'rgba(255, 255, 255, 0.85)', color: 'text.primary', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(0, 0, 0, 0.08)'}}>
         <Container maxWidth="xl">
           <Toolbar   disableGutters sx={{width: '100%', display: 'grid', alignItems: 'center', py: 2, minHeight: 'auto', gridTemplateAreas: { xs: '"logo actions" "search search"', md: '"logo search actions"'},
                                                                     gridTemplateColumns: {
