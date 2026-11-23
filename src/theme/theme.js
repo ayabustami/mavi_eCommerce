@@ -1,21 +1,26 @@
 import { createTheme } from '@mui/material/styles'
-import palette from './palette'
+import { lightPalette, darkPalette } from './palette'
 import typography from './typography'
 
-const theme = createTheme({
-  spacing:4,
-  breakpoints:{
-    xs:320,
-    sm:600,
-    md:900,
-    lg:1200,
-    xl:1536,
-    xll:1920
+
+export const getTheme=(mode)=>{
+  return createTheme({
+ cssVariables: { colorSchemeSelector: 'class' },
+    palette: {
+  ...(mode === 'light' ? lightPalette : darkPalette),
+  mode,
+},
+  spacing: 4,
+  breakpoints: {
+    values: {
+      xs: 320,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      xll: 1920,
+    },
   },
-  palette,
   typography,
 })
-
-
-
-export default theme;
+}

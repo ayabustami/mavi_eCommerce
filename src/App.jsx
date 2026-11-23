@@ -5,10 +5,15 @@ import { RouterProvider } from 'react-router'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { ThemeProvider } from '@emotion/react'
 import CssBaseline from '@mui/material/CssBaseline'
-import theme from './theme/theme'
+import {getTheme} from './theme/theme'
+import { UseThemeStore } from './store/UseThemeStore'
+
 const queryClient = new QueryClient()
 
+
 function App() {
+  const mode=UseThemeStore((state)=>state.mode)
+  const theme= getTheme(mode);
   return <>
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>

@@ -4,31 +4,40 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Logo from '../logo/Logo'
+import WhiteLogo from '../logo/WhiteLogo';
 import SearchBar from '../searchBar/SearchBar'
 import Navbar from '../navbar/Navbar'
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router';
 import { UseAuthStore } from '../../store/UseAuthStore';
+import { UseThemeStore } from '../../store/UseThemeStore';
+import DarkModeIcone from '@mui/icons-material/DarkMode';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined'
 
  
 
 export default function Header() {
   const token = UseAuthStore((state) => state.Token);
   const logout = UseAuthStore((state) => state.logout);
+
+  const mode = UseThemeStore((state) => state.mode)
+  const toggleMode=UseThemeStore((state)=>state.toggleMode);
+
   
 
   return <>
     <Box component="header">
       <AppBar   position="fixed" 
-          sx={{ bgcolor: 'rgba(255, 255, 255, 0.85)', color: 'text.primary', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(0, 0, 0, 0.08)'}}>
+          sx={{ bgcolor: 'background.paper', color: 'text.primary', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(0, 0, 0, 0.08)'}}>
         <Container maxWidth="xl">
           <Toolbar   disableGutters sx={{width: '100%', display: 'grid', alignItems: 'center', py: 2, minHeight: 'auto', gridTemplateAreas: { xs: '"logo actions" "search search"', md: '"logo search actions"'},
                                                                     gridTemplateColumns: {
                                                                       xs: '1fr auto',
                                                                       md: 'auto minmax(320px, 560px) auto'},gap: { xs: 2, md: 3 }}}> 
             <Box sx={{ gridArea: 'logo' }}>
-              <Logo />
+                {mode === 'dark' ? <WhiteLogo /> : <Logo />}
             </Box>
+            
             <Box sx={{ gridArea: 'search' ,width:'100%', minWidth:0}}>
               <SearchBar />
             </Box>
@@ -38,6 +47,9 @@ export default function Header() {
               </IconButton>
               <IconButton component={Link} to="/cart" aria-label="Cart" sx={{ color: 'text.primary' }}>
                   <ShoppingBagOutlinedIcon />
+              </IconButton>
+              <IconButton onClick={toggleMode}>
+                {mode === 'dark' ? <LightModeOutlinedIcon /> : <DarkModeIcone />}
               </IconButton>
               {token ? (
                 <Stack direction="row" spacing={1.25}  sx={{alignItems : 'center' ,pt:1,pl: 2, ml: 1, borderLeft: '1px solid', borderColor: 'divider', textDecoration: 'none', color: 'text.primary' }}>
